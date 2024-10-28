@@ -3,6 +3,14 @@
 
 using namespace std;
 
+Conta :: Conta(std::string paramNumero,std::string nomeTitular,std::string cpfTitular)
+{
+    this->numero = numero;
+    this->nomeTitular = nomeTitular;
+    this->cpfTitular;
+    this->saldo = 0;
+}
+
 void Conta::sacar (float valorASacar)
 {
     if (valorASacar < 0) {
@@ -38,3 +46,6 @@ void Conta::setNomeDoTitular(string nome)
     nomeTitular = nome;
 }
 
+std::string Conta::getNomeDoTitular() const { 
+    return nomeTitular;
+}

@@ -11,17 +11,18 @@ void ExibeSaldo (const Conta& conta)
 
 int main()
 {
-    Conta umaConta;
-    umaConta.setNomeDoTitular("Vinicius");
+    Conta umaConta("123456","Vinicius","123.456.789-10");
+    
 
-    Conta umaOutraConta;
+    Conta umaOutraConta("123456","Vinicius","123.456.789-10");
 
     umaOutraConta.depositar(500);
     umaOutraConta.sacar(200);
-    
+
+
+    cout << "Nome do titular: " << umaConta.getNomeDoTitular() << endl;
     cout << "Uma conta: " << umaConta.getSaldo()<< " Outra conta: " << umaOutraConta.getSaldo() << endl;
     
     system("pause");
     return 0;
 }
-
