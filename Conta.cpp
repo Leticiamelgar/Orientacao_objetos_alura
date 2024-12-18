@@ -1,14 +1,26 @@
 #include "Conta.hpp"
 #include <iostream>
+#include "Titular.hpp"
 
 using namespace std;
 
-Conta :: Conta(std::string paramNumero,std::string nomeTitular,std::string cpfTitular)
-{
-    this->numero = numero;
-    this->nomeTitular = nomeTitular;
-    this->cpfTitular;
-    this->saldo = 0;
+int Conta::numeroDeContas= 0;
+
+Conta :: Conta(std::string numero, Titular titular):
+    numero(numero),
+    titular(titular),
+    saldo(0)
+    {
+    
+        numeroDeContas++;
+    }
+
+Conta::~Conta(){
+    numeroDeContas--;
+}
+
+int Conta::recuperaNumeroDeContas(){
+    return numeroDeContas;
 }
 
 void Conta::sacar (float valorASacar)
@@ -41,11 +53,4 @@ float Conta::getSaldo() const
     return saldo;
 }
 
-void Conta::setNomeDoTitular(string nome)
-{
-    nomeTitular = nome;
-}
 
-std::string Conta::getNomeDoTitular() const { 
-    return nomeTitular;
-}
